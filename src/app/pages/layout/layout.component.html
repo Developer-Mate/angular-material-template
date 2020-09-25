@@ -1,0 +1,43 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
+      <img src="assets/images/material_logo.svg" class="angular-logo">
+      R7 Smart Platform</mat-toolbar>
+    <mat-nav-list>
+      <div mat-subheader>เมนูหลัก</div>
+      <a mat-list-item href="#">
+        <mat-icon mat-list-icon>group</mat-icon>
+        <div mat-line>กลุ่มเป้าหมาย</div>
+        <!-- <div mat-line>Target group</div> -->
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon mat-list-icon>duo</mat-icon>
+        <div mat-line>ระบบปรึกษาออนไลน์</div>
+        <!-- <div mat-line>Tele consult</div> -->
+      </a>
+      <mat-divider></mat-divider>
+      <div mat-subheader>เครื่องมือ</div>
+      <a mat-list-item href="#">
+        <mat-icon mat-list-icon>settings</mat-icon>
+        <div mat-line>ตั้งค่าการใช้งาน</div>
+        <div mat-line>Settings</div>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>ระบบบริหารจัดการข้อมูล PCC</span>
+
+      <span class="fill-remaining-space"></span>
+      <button mat-icon-button>
+        <mat-icon aria-label="User profile">person_pin</mat-icon>
+      </button>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

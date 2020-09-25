@@ -1,4 +1,6 @@
+import { HostListener, ViewChild } from '@angular/core';
 import { Component } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'material';
+
+
 }
